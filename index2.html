@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo-1 {
+            -moz-column-count: 3;
+            /* Firefox */
+            -webkit-column-count: 3;
+            /* Safari 和 Chrome */
+            column-count: 3;
+            -moz-column-gap: 1em;
+            -webkit-column-gap: 1em;
+            column-gap: 1em;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .item {
+            padding: 2em;
+            margin-bottom: 2em;
+            -webkit-column-break-inside: avoid;
+            break-inside: avoid;
+            /*防止断点*/
+            background: #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo-1">
+        <div class="item">
+            <div class="item_content content-lar" style="height:100px;"> 1</div>
+        </div>
+        <div class="item">
+            <div class="item_content content-sma" style="height:150px;"> 2</div>
+        </div>
+        <div class="item">
+            <div class="item_content content-mid" style="height:50px;"> 3</div>
+        </div>
+        <div class="item">
+            <div class="item_content content-sma" style="height:200px;"> 4</div>
+        </div>
+        <div class="item">
+            <div class="item_content content-mid" style="height:60px;"> 5 </div>
+        </div>
+        <div class="item">
+            <div class="item_content content-lar" style="height:90px;"> 6</div>
+        </div>
+        <div class="item">
+            <div class="item_content content-sma"> 7</div>
+        </div>
+        <div class="item">
+            <div class="item_content content-lar" style="height:120px;"> 8</div>
+        </div>
+        <div class="item">
+            <div class="item_content content-lar"> 9</div>
+        </div>
+        <div class="item">
+            <div class="item_content content-sma" style="height:100px;"> 10 </div>
+        </div>
+        <div class="item">
+            <div class="item_content content-mid"> 11 </div>
+        </div>
+        <div class="item">
+            <div class="item_content content-mid" style="height:100px;"> 12</div>
+        </div>
+        <div class="item">
+            <div class="item_content content-mid" style="height:100px;"> 12</div>
+        </div>
+    </div>
+</body>
+
+</html>

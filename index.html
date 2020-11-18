@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html,body {
+            height: 100vh;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #cecece;
+        }
+        .card {
+            position: relative;
+            width: 550px;
+            height: 320px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, .3);
+        }
+        .slide {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .slide label {
+            display: inline-block;
+            width: 50px;
+            height: 10px;
+            background-color: #d9d9d9;
+            border-radius: 10px;
+            margin: 0 3px;
+            position: relative;
+            z-index: 2;
+        }
+        .slide label::before {
+            content: "";
+            width: -100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, .3);
+            border-radius: 10px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .6s;
+        }
+        .content {
+            height: 320px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 25px;
+        }
+        .pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 20px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, .2);
+            overflow: hidden;
+        }
+        .pic img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .text {
+            width: 300px;
+            padding-left: 20px;
+            margin-left: 20px;
+        }
+        .text tit {
+            font-size: 30px;
+            font-weight: 700;
+            color: #0d0925;
+            margin-bottom: 10px;
+        }
+        .text .info {
+            font-size: 10px;
+            color: #4e4a67;
+            margin-bottom: 20px;
+            line-height: 1.5em;
+            text-align: justify;
+            word-wrap: break-word
+        }
+        .text .btn {
+            border: 0;
+            outline: 0;
+            padding: 10px 15px;
+            border-radius: 50px;
+            letter-spacing: 1px;
+            font-size: 14px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            background-color: black;
+            float: right;
+        }
+        .text .btn:hover {
+            background-color: #cecece;
+            color: black;
+        }
+        .pic img,.text {
+            opacity: 0;
+            transition: .6s;
+        }
+        /* 按钮点击切换 */
+        #slide_1:checked~.slide .slide_btn_1::before,
+        #slide_2:checked~.slide .slide_btn_2::before,
+        #slide_3:checked~.slide .slide_btn_3::before {
+            width: 100%;
+            transform: scaleX(1);
+        }
+        #slide_1:checked~.content .img_1,
+        #slide_2:checked~.content .img_2,
+        #slide_3:checked~.content .img_3 {
+            opacity: 1;
+            transition-delay: .2s;
+        }
+        #slide_1:checked~.content .text_1,
+        #slide_2:checked~.content .text_2,
+        #slide_3:checked~.content .text_3 {
+            opacity: 1;
+            margin-left: 0;
+            z-index: 100;
+            transition-delay: .3s;
+        }
+        /* #slide_3:checked~.content .pic {
+            width: 550px;
+            height: 320px;
+            z-index: 999;
+            transition: .3s .2s ease-in;
+        }
+
+        #slide_3:checked~.content {
+            padding: 0;
+            transition: .1s ease;
+        } */
+        input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <input type="radio" name="select" id="slide_1" checked>
+        <input type="radio" name="select" id="slide_2">
+        <input type="radio" name="select" id="slide_3">
+        <!-- 点击按钮 -->
+        <div class="slide">
+            <label for="slide_1" class="slide_btn_1"></label>
+            <label for="slide_2" class="slide_btn_2"></label>
+            <label for="slide_3" class="slide_btn_3"></label>
+        </div>
+        <!-- 主题内容 -->
+        <div class="content">
+            <label for="" class="pic">
+                <img src="./资料/杂项/头像/17f1-hftenhz0239935.jpg" class="img_1" alt="">
+            </label>
+            <div class="text text_1">
+                <h2 class="tit">tit</h2>
+                <p class="info">AAAAAAAAAAAAAaaaaaaaaaaAAAAAAAAAAAAAaaaaaaaaaaAAAAAAAAAAAAAaaaaaaaaaaAAAAAAAAAAAAAaaaaaaaaaaAAAAAAAAAAAAAaaaaaaaaaa</p>
+                <button class="btn">Read More</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <label for="" class="pic">
+                <img src="./资料/杂项/头像/5764-hftenhz0238287.jpg" class="img_2" alt="">
+            </label>
+            <div class="text text_2">
+                <h2 class="tit">tit</h2>
+                <p class="info">AAAAAAAAAAAAAaaaaaaaaaa</p>
+                <button class="btn">Read More</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <label for="" class="pic">
+                <img src="./资料/杂项/头像/e850352ac65c10387ee0dd97bc119313b17e89cc.jpg" class="img_3" alt="">
+            </label>
+            <div class="text text_3">
+                <h2 class="tit">tit</h2>
+                <p class="info">AAAAAAAAAAAAAaaaaaaaaaa</p>
+                <button class="btn">Read More</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const btn = document.querySelectorAll(".btn")
+    btn[0].onclick = function () {
+        alert("aa")
+    }
+</script>
+</html>

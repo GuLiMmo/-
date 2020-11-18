@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 80px;
+            padding: 1em;
+            margin-top: 1em;
+            break-inside: avoid;
+            border: 1px solid #000000;
+            background-color: #909090;
+        }
+        .spa {
+            height: 225px;
+        }
+        .box-wrapper {
+            /* -moz-column-count: 4;
+            -webkit-column-count: 4; */
+            column-count: 4;
+            -moz-column-gap: 1em;
+            -webkit-column-gap: 1em;
+            column-gap: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-wrapper">
+        <div style="margin-top: 0;" class="box"></div>
+        <div class="box spa"></div>
+        <div class="box spa"></div>
+        <div class="box spa"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box spa"></div>
+        <div class="box spa"></div>
+    </div>
+</body>
+</html>
